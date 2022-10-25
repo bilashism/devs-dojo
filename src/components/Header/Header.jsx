@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import headerImg from "../../images/header-img-1.png";
+
 const Header = () => {
+  const courses = useLoaderData();
+  console.log(courses);
   return (
     <header className="py-8 lg:py-1">
       <div className="container mx-auto px-4 grid gap-8 items-center lg:grid-cols-2 lg:min-h-screen">
@@ -10,8 +13,8 @@ const Header = () => {
             Improve Your Online Learning Experience Better Instantly
           </h1>
           <p className="text-2xl">
-            We have 40+ Online courses & 500K+ Online registered student. Find
-            your desired Courses from them.
+            We have <b>{courses.length}+</b> Online courses & 500K+ Online
+            registered student. Find your desired Courses from them.
           </p>
           <form className="flex gap-4 flex-wrap justify-center lg:justify-start">
             <input
@@ -55,7 +58,7 @@ const Header = () => {
               500+ People already trusted us.{" "}
               <Link
                 className="inline-flex items-center text-lg underline"
-                href="/courses">
+                to="/courses">
                 {" "}
                 View Courses <span>➡</span>
               </Link>

@@ -8,7 +8,13 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    children: [{ path: "/", element: <Header /> }],
+    children: [
+      {
+        path: "/",
+        element: <Header />,
+        loader: () => fetch(`https://devs-dojo.vercel.app/courses`)
+      }
+    ],
     errorElement: <ErrorPage />
   }
 ]);
