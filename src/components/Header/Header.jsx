@@ -7,14 +7,15 @@ const Header = () => {
   console.log(courses);
   return (
     <header className="py-8 lg:py-1">
-      <div className="container mx-auto px-4 grid gap-8 items-center lg:grid-cols-2 lg:min-h-screen">
+      <div className="container mx-auto px-4 grid gap-10 items-center lg:grid-cols-2 lg:min-h-screen">
         <article className="flex flex-col gap-5">
           <h1 className="text-5xl lg:text-7xl">
             Improve Your Online Learning Experience Better Instantly
           </h1>
           <p className="text-2xl">
-            We have <b>{courses.length}+</b> Online courses & 500K+ Online
-            registered student. Find your desired Courses from them.
+            We have <b className="text-red-500">{courses.length}+</b> Online
+            courses & <span className="text-red-500 font-bold">500+</span>{" "}
+            Online registered student. Find your desired Courses from them.
           </p>
           <form className="flex gap-4 flex-wrap justify-center lg:justify-start">
             <input
