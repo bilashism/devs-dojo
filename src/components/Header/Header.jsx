@@ -1,10 +1,11 @@
-import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import headerImg from "../../images/header-img-1.png";
+import { CoursesContext } from "../../pages/Main/Main";
 
 const Header = () => {
-  const courses = useLoaderData();
-  console.log(courses);
+  const courses = useContext(CoursesContext);
+
   return (
     <header className="py-8 lg:py-1">
       <div className="container mx-auto px-4 grid gap-10 items-center lg:grid-cols-2 lg:min-h-screen">
