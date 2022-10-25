@@ -1,0 +1,13 @@
+:root {
+  --heading-font-family: "Josefin Sans", sans-serif;
+  --body-font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--heading-font-family);
+}
+
+body {
+  font-family: var(--body-font-family);
+}
