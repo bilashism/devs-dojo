@@ -1,7 +1,7 @@
 # Devs Dojo
 
 - Github repo: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-bilashism 
-- Live preview: 
+- Live preview: https://devs-dojo.web.app 
 
 ## Features
 - Feature 1
