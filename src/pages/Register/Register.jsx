@@ -14,7 +14,20 @@ const Register = () => {
   const userEmailRef = useRef();
   const userPasswordRef = useRef();
 
-  const { createUser, verifyEmail } = useContext(AuthContext);
+  const { createUser, verifyEmail, updateUserProfile } =
+    useContext(AuthContext);
+
+  const handleUpdateUserProfile = (name, photoUrl) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoUrl
+    };
+    updateUserProfile(profile)
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.error(err));
+  };
 
   /**
    * Sends an email verification to the current user.
@@ -40,11 +53,14 @@ const Register = () => {
     const form = ev.target;
     const email = userEmailRef.current.value;
     const password = userPasswordRef.current.value;
+    const name = userNameRef.current.value;
+    const photoURL = userPhotoUrlRef.current.value;
 
     if (email && password) {
       createUser(email, password)
         .then(result => {
           // const user = result.user;
+          if (name && photoURL) handleUpdateUserProfile(name, photoURL);
           form.reset();
           setFeedback(defaultFeedback);
           toast.success("Registration is completed.", { duration: 3000 });
@@ -53,6 +69,7 @@ const Register = () => {
             "Please verify your email. Check your inbox or spam folder.",
             { duration: 4000 }
           );
+
           navigate("/");
           // console.log(result);
         })

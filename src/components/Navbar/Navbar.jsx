@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { FaCartPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../authentication/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [menuDropDownOpen, setMenuDropDownOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  const { photoURL, displayName } = user;
+  console.log(user);
 
   return (
     <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
@@ -39,12 +43,17 @@ const Navbar = () => {
             Devs Dojo
           </span>
         </Link>
-        <div className="flex justify-end flex-grow">
+        <div className="flex justify-end items-center flex-grow gap-2 lg:gap-4 lg:pr-4">
           <button
             type="button"
-            className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+            className="block p-2 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             🌙
           </button>
+          <Link
+            to="/checkout"
+            className="block p-2  text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+            <FaCartPlus />
+          </Link>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -67,7 +76,7 @@ const Navbar = () => {
         </button>
         <div
           className={`${menuOpen ? "" : "hidden"} w-full md:block md:w-auto`}>
-          <ul className="flex flex-col gap-2 p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col items-center gap-8 p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row  md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link
                 to="/"
@@ -98,52 +107,47 @@ const Navbar = () => {
                 Blog
               </Link>
             </li>
-            <li className="relative">
-              <Link
-                to="/login"
-                className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                Login
-              </Link>
-              <button
-                onClick={() => setMenuDropDownOpen(!menuDropDownOpen)}
-                className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                Profile
-                <svg
-                  className="ml-1 w-5 h-5"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"></path>
-                </svg>
-              </button>
-              {/* Profile Dropdown menu */}
-              <div
-                className={`${
-                  menuDropDownOpen ? "" : `hidden`
-                } absolute top-full mt-2 right-auto bottom-auto left-0 z-10 w-44 font-normal bg-white rounded shadow dark:bg-gray-700`}>
-                <ul
-                  className="py-1 text-sm text-gray-700 dark:text-gray-400"
-                  aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a
-                      href="#"
-                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      Settings
-                    </a>
-                  </li>
-                </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
-                    Sign out
-                  </a>
-                </div>
-              </div>
+            <li>
+              {!user?.uid && (
+                <Link
+                  to="/login"
+                  className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                  Login
+                </Link>
+              )}
+              {user?.uid && (
+                <>
+                  <div class="group relative flex ">
+                    <button
+                      type="button"
+                      title={displayName}
+                      class=" w-10 h-10 rounded">
+                      <img
+                        src={photoURL}
+                        alt={displayName}
+                        className="rounded-full ring-2 w-10 h-10 aspect-square object-cover"
+                      />
+                    </button>
+                    <nav class="border bg-white invisible border-gray-800 w-40 absolute right-0 top-full transition-all opacity-0 group-hover:visible group-hover:opacity-100 group-hover:translate-y-1 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
+                      <ul class="flex flex-col gap-2">
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                            Settings
+                          </a>
+                        </li>
+                        <li>
+                          <button
+                            onClick={logOut}
+                            type="button"
+                            class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+                            Sign Out
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </>
+              )}
             </li>
           </ul>
         </div>
