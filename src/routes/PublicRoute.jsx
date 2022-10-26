@@ -3,7 +3,9 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Header from "../components/Header/Header";
 import Courses from "../pages/Courses/Courses";
+import Login from "../pages/Login/Login";
 import Main from "../pages/Main/Main";
+import Register from "../pages/Register/Register";
 import SingleCourse from "../pages/SingleCourse/SingleCourse";
 
 export const router = createBrowserRouter([
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://devs-dojo.vercel.app/course/${params.id}`),
         element: <SingleCourse />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
       }
     ],
     errorElement: <ErrorPage />
