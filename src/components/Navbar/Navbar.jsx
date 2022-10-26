@@ -7,7 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logOut, authLoading } = useContext(AuthContext);
   const { photoURL, displayName } = user;
-  console.log(user);
+  // console.log(user);
 
   return (
     <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
