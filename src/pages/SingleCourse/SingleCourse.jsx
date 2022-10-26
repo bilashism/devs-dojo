@@ -35,7 +35,9 @@ const SingleCourse = () => {
           </picture>
         </figure>
         <div className="flex flex-col gap-2 flex-grow justify-between p-4 backdrop-blur-3xl -mt-16">
-          <h3 className="text-2xl pb-3 text-white">{courseName}</h3>
+          <h3 className="text-2xl pb-3 text-white drop-shadow-md shadow-slate-500">
+            {courseName}
+          </h3>
 
           <p className="flex flex-wrap gap-3 items-center justify-between">
             <span className="">Rating: {rating}</span>
