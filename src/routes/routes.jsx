@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Header from "../components/Header/Header";
+import Blog from "../pages/Blog/Blog";
 import Checkout from "../pages/Checkout/Checkout";
 import Courses from "../pages/Courses/Courses";
 import Login from "../pages/Login/Login";
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://devs-dojo.vercel.app/course/${params.id}`),
         element: <SingleCourse />
+      },
+      {
+        path: "/blog",
+        element: <Blog />
       },
       {
         path: "/login",
