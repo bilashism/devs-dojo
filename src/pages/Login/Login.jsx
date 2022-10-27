@@ -15,7 +15,7 @@ const Login = () => {
   const userEmailRef = useRef();
   const userPasswordRef = useRef();
   const location = useLocation();
-  const from = location?.state?.from?.pathName || "/";
+  const from = location?.state?.from?.pathname || "/";
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -32,7 +32,7 @@ const Login = () => {
     providerLogin(provider)
       .then(data => {
         toast.success("Login successful! 🎉");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch(err => {
         setFeedback(err?.message.replace("Firebase: ", ""));
@@ -61,7 +61,7 @@ const Login = () => {
           form.reset();
           setFeedback(defaultFeedback);
           toast.success("Login successful! 🎉");
-          navigate("/");
+          navigate(from, { replace: true });
         })
         .catch(err => {
           setFeedback(err?.message.replace("Firebase: ", ""));
