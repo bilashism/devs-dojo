@@ -18,14 +18,14 @@ const Header = () => {
             courses & <span className="text-red-500 font-bold">500+</span>{" "}
             Online registered student. Find your desired Courses from them.
           </p>
-          <form className="flex gap-4 flex-wrap justify-center lg:justify-start">
+          <form className="flex gap-4 flex-wrap lg:flex-nowrap justify-center items-center lg:justify-start">
             <input
-              className="w-full h-full flex-grow rounded-full pl-4 py-4 border border-blue-700"
+              className="w-3/4 h-full flex-grow rounded-full p-4 border border-blue-700"
               type="search"
               placeholder="Search Courses"
             />
             <button
-              className="rounded-full bg-blue-700 text-white p-3 hover:bg-red-500 hover:text-slate-800 transition"
+              className="rounded-full w-1/4 bg-blue-700 text-white p-4 border border-blue-700 hover:border-red-500 hover:bg-red-500 hover:text-slate-800 transition"
               type="submit">
               Search Now
             </button>
@@ -39,6 +39,9 @@ const Header = () => {
                 alt="banner"
                 width="46"
                 height="46"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 className="rounded-full ring-2 ring-white"
               />
               <img
@@ -46,6 +49,9 @@ const Header = () => {
                 alt="banner"
                 width="46"
                 height="46"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 className="rounded-full ring-2 ring-white -mx-2"
               />
               <img
@@ -53,6 +59,9 @@ const Header = () => {
                 alt="banner"
                 width="46"
                 height="46"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 className="rounded-full ring-2 ring-white"
               />
             </div>
@@ -61,7 +70,6 @@ const Header = () => {
               <Link
                 className="inline-flex items-center text-lg underline hover:text-red-500 transition-colors"
                 to="/courses">
-                {" "}
                 View Courses <span>➡</span>
               </Link>
             </p>
@@ -73,7 +81,6 @@ const Header = () => {
             <img
               src={headerImg}
               alt="header banner"
-              className=""
               loading="lazy"
               width="2379"
               height="1656"

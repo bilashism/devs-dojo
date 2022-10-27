@@ -32,6 +32,7 @@ const Login = () => {
     providerLogin(provider)
       .then(data => {
         toast.success("Login successful! 🎉");
+        navigate("/");
       })
       .catch(err => {
         setFeedback(err?.message.replace("Firebase: ", ""));

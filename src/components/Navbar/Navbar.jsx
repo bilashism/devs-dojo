@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../authentication/AuthProvider/AuthProvider";
@@ -7,6 +7,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logOut, authLoading } = useContext(AuthContext);
   const { photoURL, displayName } = user;
+  const errorPhotoUrl = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjjoJ0G5uM6SvT9IaTjEo-qIsSKH4tQy8hvFn2KJ40UAXIjP6OQwnXpstX3gv4Se9YYfM&usqp=CAU`;
+  const photoUrlRef = useRef();
   // console.log(user);
 
   return (
@@ -124,6 +126,13 @@ const Navbar = () => {
                       src={photoURL}
                       alt={displayName}
                       className="rounded-full ring-2 w-10 h-10 aspect-square object-cover"
+                      width="40"
+                      height="40"
+                      ref={photoUrlRef}
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                      onError={() => (photoUrlRef.current.src = errorPhotoUrl)}
                     />
                   </button>
                   <nav className="border bg-white invisible border-gray-800 w-40 absolute right-0 top-full transition-all opacity-0 group-hover:visible group-hover:opacity-100 group-hover:translate-y-1 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
