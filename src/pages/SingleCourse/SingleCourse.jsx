@@ -4,6 +4,9 @@ import { FcInfo } from "react-icons/fc";
 import { TbCertificate, TbCertificateOff } from "react-icons/tb";
 import { Link, useLoaderData } from "react-router-dom";
 import { CartContext } from "../Main/Main";
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 const SingleCourse = () => {
   const { handleAddToCart } = useContext(CartContext);
@@ -19,14 +22,30 @@ const SingleCourse = () => {
     rating,
     topics
   } = course;
-  console.log(course);
+  // console.log(course);
+
+  const inputRef = useRef(null);
+  const printDocument = () => {
+    html2canvas(inputRef.current).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0);
+      pdf.save(`${courseName.replace(/ /gi, "-")}.pdf`);
+    });
+  };
 
   return (
     <article className="min-h-[calc(100vh-6rem)] grid items-center py-8">
-      <div className="container max-w-4xl mx-auto px-4 flex flex-col gap-8">
+      <div
+        className="container max-w-4xl mx-auto px-4 flex flex-col gap-8"
+        ref={inputRef}>
         <div className="flex items-center gap-2 justify-between drop-shadow-md shadow-slate-500 text-3xl">
           <h3 className="pb-3 flex-grow">{courseName}</h3>
-          <button type="button" className="text-blue-700">
+          <button
+            type="button"
+            title="Download this article as .pdf"
+            className="text-blue-700 transition-colors hover:text-red-500"
+            onClick={printDocument}>
             <FaFileDownload />
           </button>
         </div>
