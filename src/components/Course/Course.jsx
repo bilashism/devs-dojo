@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import { FaClock, FaLightbulb, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../pages/Main/Main";
+import { TbCertificate, TbCertificateOff } from "react-icons/tb";
 
 const Course = ({ course }) => {
   const { handleAddToCart } = useContext(CartContext);
@@ -37,13 +39,33 @@ const Course = ({ course }) => {
         <h3 className="text-2xl pb-3">{courseName}</h3>
 
         <p className="flex flex-wrap gap-3 items-center justify-between">
-          <span className="">Rating: {rating}</span>
-          <span className="">Certification: {certification ? `✔` : `❌`}</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-flex items-center text-lg text-blue-700">
+              <FaStar />
+            </span>
+            <span className="">{rating}</span>
+          </span>
+          <span className="inline-flex items-center gap-2">
+            Certification:{" "}
+            <span className="inline-flex items-center text-green-700">
+              {certification ? <TbCertificate /> : <TbCertificateOff />}
+            </span>
+          </span>
         </p>
-        <p className="">Duration: {duration}</p>
-        <p className="">Topics: {topics}</p>
+        <p className="flex items-center gap-2">
+          <span className="inline-flex items-center text-lg text-blue-700">
+            <FaClock />
+          </span>{" "}
+          {duration}
+        </p>
         <p className="">
-          📝 {details.length >= 125 ? `${details.slice(0, 125)}...` : details}
+          <span className="font-bold">Topics:</span> {topics}
+        </p>
+        <p className="">
+          <span className="inline-flex items-center text-lg text-blue-700">
+            <FaLightbulb />
+          </span>{" "}
+          {details.length >= 125 ? `${details.slice(0, 125)}...` : details}
           {details.length >= 125 && (
             <Link
               to={`/course/${id}`}
@@ -54,7 +76,7 @@ const Course = ({ course }) => {
         </p>
 
         <div className="flex items-center justify-between flex-wrap">
-          <p className="text-red-500">${price}</p>
+          <p className="text-red-500 font-bold">${price}</p>
           {/* <Link
             to={`/course/${id}`}
             className="inline-flex rounded-full bg-blue-700 text-white p-3 hover:bg-red-500 hover:text-slate-800 transition">

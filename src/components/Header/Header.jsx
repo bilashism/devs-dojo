@@ -25,7 +25,7 @@ const Header = () => {
               placeholder="Search Courses"
             />
             <button
-              className="rounded-full w-1/4 bg-blue-700 text-white p-4 border border-blue-700 hover:border-red-500 hover:bg-red-500 hover:text-slate-800 transition"
+              className="rounded-full lg:w-1/4 bg-blue-700 text-white p-4 border border-blue-700 hover:border-red-500 hover:bg-red-500 hover:text-slate-800 transition"
               type="submit">
               Search Now
             </button>
