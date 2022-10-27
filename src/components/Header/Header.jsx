@@ -7,20 +7,20 @@ const Header = () => {
   const courses = useContext(CoursesContext);
 
   return (
-    <header className="py-8 lg:py-1">
+    <header className="py-8 lg:py-4">
       <div className="container mx-auto px-4 grid gap-10 items-center lg:grid-cols-2 lg:min-h-screen">
-        <article className="flex flex-col gap-5">
-          <h1 className="text-5xl lg:text-7xl">
+        <article className="flex flex-col gap-5 overflow-auto">
+          <h1 className="break-words text-4xl lg:text-7xl">
             Improve Your Online Learning Experience Better Instantly
           </h1>
-          <p className="text-2xl">
+          <p className="text-xl">
             We have <b className="text-red-500">{courses.length}+</b> Online
             courses & <span className="text-red-500 font-bold">500+</span>{" "}
             Online registered student. Find your desired Courses from them.
           </p>
           <form className="flex gap-4 flex-wrap justify-center lg:justify-start">
             <input
-              className="h-full flex-grow rounded-full pl-4 py-4 border border-blue-700"
+              className="w-full h-full flex-grow rounded-full pl-4 py-4 border border-blue-700"
               type="search"
               placeholder="Search Courses"
             />
@@ -59,7 +59,7 @@ const Header = () => {
             <p className="text-center lg:text-left">
               500+ People already trusted us.{" "}
               <Link
-                className="inline-flex items-center text-lg underline"
+                className="inline-flex items-center text-lg underline hover:text-red-500 transition-colors"
                 to="/courses">
                 {" "}
                 View Courses <span>➡</span>
