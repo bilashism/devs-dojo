@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../pages/Main/Main";
 
 const Course = ({ course }) => {
+  const { handleAddToCart } = useContext(CartContext);
   const {
     id,
     courseName,
@@ -13,7 +15,6 @@ const Course = ({ course }) => {
     rating,
     topics
   } = course;
-  console.log(course);
 
   return (
     <article className="flex flex-col bg-slate-200 rounded-lg">
@@ -54,11 +55,17 @@ const Course = ({ course }) => {
 
         <div className="flex items-center justify-between flex-wrap">
           <p className="text-red-500">${price}</p>
-          <Link
+          {/* <Link
             to={`/course/${id}`}
             className="inline-flex rounded-full bg-blue-700 text-white p-3 hover:bg-red-500 hover:text-slate-800 transition">
             Buy now
-          </Link>
+          </Link> */}
+          <button
+            type="button"
+            className="inline-flex rounded-full bg-blue-700 disabled:cursor-not-allowed disabled:hover:bg-blue-700 disabled:hover:text-white text-white p-3 hover:bg-red-500 hover:text-slate-800 transition"
+            onClick={ev => handleAddToCart(ev, id)}>
+            Add to cart
+          </button>
         </div>
       </div>
     </article>

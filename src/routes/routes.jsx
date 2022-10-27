@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Header from "../components/Header/Header";
+import Checkout from "../pages/Checkout/Checkout";
 import Courses from "../pages/Courses/Courses";
 import Login from "../pages/Login/Login";
 import Main from "../pages/Main/Main";
@@ -40,6 +41,14 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
+      },
+      {
+        path: "/checkout/:id",
+        element: <Checkout />
       }
     ],
     errorElement: <ErrorPage />

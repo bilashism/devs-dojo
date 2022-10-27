@@ -1,11 +1,14 @@
 import React, { useContext, useRef, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import { AuthContext } from "../../authentication/AuthProvider/AuthProvider";
+import { CartContext } from "../../pages/Main/Main";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logOut, authLoading } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
   const { photoURL, displayName } = user;
   const errorPhotoUrl = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjjoJ0G5uM6SvT9IaTjEo-qIsSKH4tQy8hvFn2KJ40UAXIjP6OQwnXpstX3gv4Se9YYfM&usqp=CAU`;
   const photoUrlRef = useRef();
@@ -53,8 +56,14 @@ const Navbar = () => {
           </button>
           <Link
             to="/checkout"
-            className="block p-1 md:p-2  text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+            className="relative block p-1 md:p-2  text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <FaCartPlus />
+
+            {cart.length >= 1 && (
+              <span className="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
+                {cart.length}
+              </span>
+            )}
           </Link>
         </div>
         <button

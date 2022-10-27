@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { CartContext } from "../Main/Main";
 
 const SingleCourse = () => {
+  const { handleAddToCart } = useContext(CartContext);
   const course = useLoaderData();
   const {
     id,
@@ -53,6 +55,7 @@ const SingleCourse = () => {
             <p className="text-red-500">${price}</p>
             <Link
               to={`/checkout/${id}`}
+              onClick={ev => handleAddToCart(ev, id)}
               className="inline-flex rounded-full bg-blue-700 text-white p-3 hover:bg-red-500 hover:text-slate-800 transition">
               Get premium access
             </Link>
