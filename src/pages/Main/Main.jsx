@@ -45,9 +45,6 @@ const Main = () => {
     setCart(newCart);
     // console.log(newCart);
     addToDb(selectedProductId);
-    ev.target.disabled = true;
-    ev.target.innerText = `Added to cart`;
-    ev.target.classList.add("bg-green-500");
   };
 
   const handleRemoveFromCart = id => {

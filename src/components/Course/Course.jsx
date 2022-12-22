@@ -5,7 +5,7 @@ import { CartContext } from "../../pages/Main/Main";
 import { TbCertificate, TbCertificateOff } from "react-icons/tb";
 
 const Course = ({ course }) => {
-  const { handleAddToCart } = useContext(CartContext);
+  const { handleAddToCart, cart } = useContext(CartContext);
   const {
     id,
     courseName,
@@ -17,7 +17,7 @@ const Course = ({ course }) => {
     rating,
     topics
   } = course;
-
+  const isAdded = cart.some(course => course.id === id);
   return (
     <article className="flex flex-col bg-slate-200 rounded-lg">
       <figure className="text-center">
@@ -84,9 +84,12 @@ const Course = ({ course }) => {
           </Link> */}
           <button
             type="button"
-            className="inline-flex rounded-full bg-blue-700 disabled:cursor-not-allowed disabled:hover:bg-blue-700 disabled:hover:text-white text-white p-3 hover:bg-red-500 hover:text-slate-800 transition"
+            disabled={isAdded}
+            className={`inline-flex rounded-full ${
+              isAdded ? "bg-green-500" : "bg-blue-700"
+            } disabled:cursor-not-allowed disabled:hover:bg-blue-700 disabled:hover:text-white text-white p-3 hover:bg-red-500 hover:text-slate-800 transition`}
             onClick={ev => handleAddToCart(ev, id)}>
-            Add to cart
+            Add{isAdded && "ed"} to cart
           </button>
         </div>
       </div>
