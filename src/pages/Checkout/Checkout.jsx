@@ -24,7 +24,7 @@ const Checkout = () => {
   }, []);
 
   return (
-    <div className="py-4">
+    <div className="py-4 dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container mx-auto px-4 flex flex-col gap-8  ">
         <h2 className="text-4xl text-center pt-4">Checkout</h2>
         <p className="text-center">Items added: {cart.length}</p>

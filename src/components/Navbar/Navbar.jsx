@@ -17,7 +17,7 @@ const Navbar = () => {
   // console.log(user);
   const { toggleTheme, curTheme } = useContext(ThemeContext);
   return (
-    <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 transition-colors">
       <div className="container flex flex-wrap justify-between items-center mx-auto px-4">
         <Link to="/" className="flex items-center gap-4">
           <svg
@@ -46,7 +46,7 @@ const Navbar = () => {
               fill="#38b6ff"
             />
           </svg>
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white transition-colors">
             Devs Dojo
           </span>
         </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
         </button>
         <div
           className={`${menuOpen ? "" : "hidden"} w-full md:block md:w-auto`}>
-          <ul className="flex flex-col items-center gap-8 p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row  md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col items-center gap-8 p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row  md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 transition-colors">
             <li>
               <Link
                 to="/"

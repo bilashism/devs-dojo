@@ -7,7 +7,7 @@ const Header = () => {
   const courses = useContext(CoursesContext);
 
   return (
-    <header className="py-8 lg:py-4">
+    <header className="py-8 lg:py-4 dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container mx-auto px-4 grid gap-10 items-center lg:grid-cols-2 lg:min-h-screen">
         <article className="flex flex-col gap-5 overflow-auto">
           <h1 className="break-words text-4xl lg:text-7xl">

@@ -2,14 +2,14 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section className="text-gray-600 body-font overflow-hidden dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container px-5 py-24 mx-auto">
         <div className="grid gap-x-8 gap-y-12 lg:grid-cols-2">
-          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100">
+          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100 dark:bg-gray-900 dark:text-white transition-colors">
             <span className="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest">
               CORS
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               What is cors?
             </h2>
             <p className="leading-relaxed mb-8">
@@ -54,11 +54,11 @@ const Blog = () => {
             </div>
           </div>
 
-          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100">
+          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100 dark:bg-gray-900 dark:text-white transition-colors">
             <span className="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest">
               AUTHENTICATION
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               Why are you using firebase? What other options do you have to
               implement authentication?
             </h2>
@@ -104,11 +104,11 @@ const Blog = () => {
             </div>
           </div>
 
-          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100">
+          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100 dark:bg-gray-900 dark:text-white transition-colors">
             <span className="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest">
               REACT
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               How does the private route work?
             </h2>
             <p className="leading-relaxed mb-8">
@@ -155,11 +155,11 @@ const Blog = () => {
             </div>
           </div>
 
-          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100">
+          <div className="p-2 lg:p-12 flex flex-col items-start bg-stone-100 dark:bg-gray-900 dark:text-white transition-colors">
             <span className="inline-block py-1 px-2 rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest">
               NODE
             </span>
-            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+            <h2 className="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-white mt-4 mb-4">
               What is Node? How does Node work?
             </h2>
             <p className="leading-relaxed mb-8">

@@ -8,7 +8,7 @@ const Cart = () => {
   );
   const tax = Number((totalPrice * 0.1).toFixed(2));
   return (
-    <div className="">
+    <div className="dark:bg-gray-900 dark:text-white transition-colors">
       <div className="flex items-center justify-between gap-8 flex-wrap text-xl">
         <h2 className="">Total price</h2>
         <b className="text-blue-500 ">${totalPrice}</b>

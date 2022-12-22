@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
-    <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16 min-h-screen overflow-hidden text-center lg:text-left">
+    <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16 min-h-screen overflow-hidden text-center lg:text-left dark:bg-gray-900 dark:text-white transition-colors">
       <div className=" w-full xl:w-1/2 relative">
         <div className="relative">
           <div className="">
             <div className="">
-              <h1 className="my-2 text-gray-800 font-bold text-2xl">
+              <h1 className="my-2 text-gray-800 dark:text-white font-bold text-2xl">
                 Looks like you've found the doorway to the great nothing
               </h1>
-              <p className="my-2 text-gray-800">
+              <p className="my-2 text-gray-800 dark:text-white">
                 Sorry about that! Please visit our homepage to get where you
                 need to go.
               </p>

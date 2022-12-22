@@ -14,7 +14,7 @@ const CheckoutItem = ({ course }) => {
     topics
   } = course;
   return (
-    <article className="grid items-center self-start p-4 gap-4 lg:grid-cols-12 bg-slate-300">
+    <article className="grid items-center self-start p-4 gap-4 lg:grid-cols-12 bg-slate-300 dark:bg-gray-700 dark:text-white transition-colors">
       <figure className="lg:col-span-2 flex items-center text-center">
         <picture className="inline-flex ">
           <source srcSet={courseImg} />

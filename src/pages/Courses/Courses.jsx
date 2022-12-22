@@ -6,7 +6,7 @@ import { CoursesContext } from "../Main/Main";
 const Courses = () => {
   const courses = useContext(CoursesContext);
   return (
-    <section className="py-8 ">
+    <section className="py-8 dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-3">

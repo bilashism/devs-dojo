@@ -81,7 +81,7 @@ const Register = () => {
   };
 
   return (
-    <section className="py-8 lg:py-4">
+    <section className="py-8 lg:py-4 dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container mx-auto px-4 grid gap-8 items-center lg:grid-cols-2 lg:min-h-screen">
         {/* image section */}
         <figure className="text-center lg:order-last rounded-full bg-red-500 aspect-square">

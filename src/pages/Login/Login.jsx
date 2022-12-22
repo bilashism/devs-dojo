@@ -74,7 +74,7 @@ const Login = () => {
   };
 
   return (
-    <section className="py-8 lg:py-4">
+    <section className="py-8 lg:py-4 dark:bg-gray-900 dark:text-white transition-colors">
       <div className="container mx-auto px-4 grid gap-8 items-center lg:grid-cols-2 lg:min-h-screen">
         {/* image section */}
         <figure className="order-first lg:order-none rounded-full bg-red-500 aspect-square">
@@ -147,14 +147,14 @@ const Login = () => {
                 <button
                   onClick={() => handleProviderLogin(googleProvider)}
                   type="button"
-                  className="inline-flex items-center justify-center text-center gap-2 p-3 bg-slate-200 hover:bg-slate-500 hover:text-white transition">
+                  className="inline-flex items-center justify-center text-center gap-2 p-3 bg-slate-200 hover:bg-slate-500 hover:text-white transition dark:bg-gray-700 dark:text-white">
                   <FcGoogle /> Log in with Google
                 </button>
 
                 <button
                   onClick={() => handleProviderLogin(githubProvider)}
                   type="button"
-                  className="inline-flex items-center justify-center text-center gap-2 p-3 bg-slate-200 hover:bg-slate-500 hover:text-white transition">
+                  className="inline-flex items-center justify-center text-center gap-2 p-3 bg-slate-200 hover:bg-slate-500 hover:text-white transition dark:bg-gray-700 dark:text-white">
                   <FaGithub /> Log in with Github
                 </button>
                 <p className="">or</p>

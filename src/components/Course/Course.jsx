@@ -19,7 +19,7 @@ const Course = ({ course }) => {
   } = course;
   const isAdded = cart.some(course => course.id === id);
   return (
-    <article className="flex flex-col bg-slate-200 rounded-lg">
+    <article className="flex flex-col bg-slate-200 rounded-lg dark:bg-gray-700 dark:text-white transition-colors">
       <figure className="text-center">
         <picture className="inline-flex max-w-sm h-60">
           <source srcSet={courseImg} />

@@ -35,7 +35,7 @@ const SingleCourse = () => {
   };
 
   return (
-    <article className="min-h-[calc(100vh-6rem)] grid items-center py-8">
+    <article className="min-h-[calc(100vh-6rem)] grid items-center py-8 dark:bg-gray-900 dark:text-white transition-colors">
       <div
         className="container max-w-4xl mx-auto px-4 flex flex-col gap-8"
         ref={inputRef}>
@@ -67,7 +67,7 @@ const SingleCourse = () => {
             </picture>
           </figure>
 
-          <div className="flex flex-col gap-4 flex-grow justify-between p-4 bg-slate-200">
+          <div className="flex flex-col gap-4 flex-grow justify-between p-4 bg-slate-200 dark:bg-gray-700 dark:text-white transition-colors">
             <p className="flex flex-wrap gap-3 items-center justify-between">
               <span className="font-bold">
                 Rating: <i className="text-blue-700">{rating}</i>
