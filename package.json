@@ -29,5 +29,18 @@
     "tailwindcss": "^3.2.1",
     "vite": "^3.1.8",
     "vite-plugin-mkcert": "^1.10.1"
-  }
+  },
+  "description": "- Live preview: https://devs-dojo.web.app",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bilashism/devs-dojo.git"
+  },
+  "keywords": [],
+  "author": "Md. Taifuzzaman Bilash <bilashism@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bilashism/devs-dojo/issues"
+  },
+  "homepage": "https://github.com/bilashism/devs-dojo#readme"
 }
