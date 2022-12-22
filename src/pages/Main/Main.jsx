@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import {
@@ -65,6 +65,7 @@ const Main = () => {
   return (
     <CoursesContext.Provider value={courses}>
       <CartContext.Provider value={cartContextData}>
+        <ScrollRestoration />
         <Navbar />
         <Outlet />
         <Footer />
