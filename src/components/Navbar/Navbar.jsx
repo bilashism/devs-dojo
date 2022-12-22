@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../authentication/AuthProvider/AuthProvider";
 import { CartContext } from "../../pages/Main/Main";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { ThemeContext } from "../../App";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +15,7 @@ const Navbar = () => {
   const errorPhotoUrl = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjjoJ0G5uM6SvT9IaTjEo-qIsSKH4tQy8hvFn2KJ40UAXIjP6OQwnXpstX3gv4Se9YYfM&usqp=CAU`;
   const photoUrlRef = useRef();
   // console.log(user);
-
+  const { toggleTheme, curTheme } = useContext(ThemeContext);
   return (
     <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="container flex flex-wrap justify-between items-center mx-auto px-4">
@@ -49,11 +51,12 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex justify-end items-center flex-grow gap-2 lg:gap-4 lg:pr-4">
-          <button
-            type="button"
-            className="block p-1 md:p-2 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            🌙
-          </button>
+          <DarkModeSwitch
+            title="Toggle color scheme"
+            checked={curTheme === "light"}
+            onChange={toggleTheme}
+            size={30}
+          />
           <Link
             to="/checkout"
             className="relative block p-1 md:p-2  text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
