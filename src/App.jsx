@@ -1,4 +1,4 @@
-import { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import { router } from "./routes/routes";
@@ -9,10 +9,10 @@ export const ThemeContext = createContext();
 
 const App = () => {
   const [curTheme, setTheme] = useThemeToggle();
-  const [darkSide, setDarkSide] = useState(curTheme === "light" ? true : false);
 
-  const toggleTheme = ev => {
+  const toggleTheme = () => {
     setTheme(curTheme);
+    toast.success(`You're now in ${curTheme} mode!`);
   };
 
   return (
