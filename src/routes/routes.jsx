@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AsSeenIn from "../components/AsSeenIn/AsSeenIn";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import FeaturedBlogs from "../components/FeaturedBlogs/FeaturedBlogs";
 import Features from "../components/Features/Features";
 import Header from "../components/Header/Header";
 import Statistics from "../components/Statistics/Statistics";
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
             <Courses />
             <Features />
             <Statistics />
+            <FeaturedBlogs />
           </>
         )
       },
