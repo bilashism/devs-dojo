@@ -1,4 +1,5 @@
 import React from "react";
+import Blog from "../../pages/Blog/Blog";
 
 const FeaturedBlogs = () => {
   return (
@@ -13,14 +14,15 @@ const FeaturedBlogs = () => {
               <h2 className="text-dark mb-4 text-3xl font-bold sm:text-4xl md:text-[40px]">
                 Our Recent News
               </h2>
-              <p className="text-body-color text-base">
+              {/* <p className="text-body-color text-base">
                 There are many variations of passages of Lorem Ipsum available
                 but the majority have suffered alteration in some form.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
-        <div className="-mx-4 flex flex-wrap">
+        <Blog />
+        {/* <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 md:w-1/2 lg:w-1/3">
             <div className="mx-auto mb-10 max-w-[370px]">
               <div className="mb-8 overflow-hidden rounded">
@@ -102,7 +104,7 @@ const FeaturedBlogs = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
