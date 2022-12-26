@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import AsSeenIn from "../components/AsSeenIn/AsSeenIn";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Features from "../components/Features/Features";
 import Header from "../components/Header/Header";
 import Blog from "../pages/Blog/Blog";
 import Checkout from "../pages/Checkout/Checkout";
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
             <Header />
             <AsSeenIn />
             <Courses />
+            <Features />
           </>
         )
       },
