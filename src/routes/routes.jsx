@@ -4,6 +4,7 @@ import AsSeenIn from "../components/AsSeenIn/AsSeenIn";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Features from "../components/Features/Features";
 import Header from "../components/Header/Header";
+import Statistics from "../components/Statistics/Statistics";
 import Blog from "../pages/Blog/Blog";
 import Checkout from "../pages/Checkout/Checkout";
 import Courses from "../pages/Courses/Courses";
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
             <AsSeenIn />
             <Courses />
             <Features />
+            <Statistics />
           </>
         )
       },
