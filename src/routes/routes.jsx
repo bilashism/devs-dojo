@@ -58,6 +58,15 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <Register />
       },
+      ,
+      {
+        path: "/faq",
+        element: (
+          <h2 className="text-center text-3xl min-h-[50vh] flex items-center justify-center">
+            Coming soon...
+          </h2>
+        )
+      },
       {
         path: "/checkout",
         element: (
