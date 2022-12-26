@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: "/faq",
         element: (
-          <h2 className="text-center text-3xl min-h-[50vh] flex items-center justify-center">
+          <h2 className="text-center text-3xl min-h-[50vh] flex items-center justify-center dark:bg-gray-900 dark:text-white transition-colors">
             Coming soon...
           </h2>
         )
