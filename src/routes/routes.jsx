@@ -6,6 +6,7 @@ import FeaturedBlogs from "../components/FeaturedBlogs/FeaturedBlogs";
 import Features from "../components/Features/Features";
 import Header from "../components/Header/Header";
 import Statistics from "../components/Statistics/Statistics";
+import Testimonials from "../components/Testimonials/Testimonials";
 import Blog from "../pages/Blog/Blog";
 import Checkout from "../pages/Checkout/Checkout";
 import Courses from "../pages/Courses/Courses";
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
             <Features />
             <Statistics />
             <FeaturedBlogs />
+            <Testimonials />
           </>
         )
       },
