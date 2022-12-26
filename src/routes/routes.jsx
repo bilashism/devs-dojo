@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+import AsSeenIn from "../components/AsSeenIn/AsSeenIn";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Header from "../components/Header/Header";
 import Blog from "../pages/Blog/Blog";
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
         element: (
           <>
             <Header />
+            <AsSeenIn />
             <Courses />
           </>
         )

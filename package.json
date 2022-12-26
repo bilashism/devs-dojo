@@ -20,7 +20,8 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.2",
-    "react-toggle-dark-mode": "^1.1.1"
+    "react-toggle-dark-mode": "^1.1.1",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
